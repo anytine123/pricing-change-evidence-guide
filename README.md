@@ -17,7 +17,13 @@ Read this example for free. To run your own comparison against that historical o
 }
 ~~~~
 
-Only public material belongs in this input. Preserve the original run ID and retrieve REPORT and OUTPUT from its default key-value store. If a result is delayed, reconcile the same run before any new paid request. To start your own baseline, use the observe operation and save the complete REPORT.observation for a later comparison.
+Only public material belongs in this input. To start your own baseline, use the `observe` operation and save the complete `REPORT.observation` for a later comparison.
+
+## Recover a comparison after a timeout
+
+Save the Apify run ID as soon as your agent receives it. To recover the result, read `REPORT` and `OUTPUT` from that run’s default key-value store. If the response was lost before your agent saved the run ID, look for the original in your job history or logs. Pause while the outcome is uncertain. Starting a second run can create another charge.
+
+For a deliberately new comparison, assign a fresh `requestId`, authorize one run and save its run ID. The `requestId` labels the request. The Apify run ID locates its result. A completed observation or a determinate comparison costs US$0.05, including an unchanged result. An inconclusive comparison has a $0 product fee. Apify platform usage may apply.
 
 To request coverage, use the Actor listing's Issues section and supply a public source URL, a price field and the intended comparison frequency.
 
